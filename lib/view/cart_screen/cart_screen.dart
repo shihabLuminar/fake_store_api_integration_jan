@@ -83,7 +83,11 @@ class _CartScreenState extends State<CartScreen> {
                           ),
                           Row(
                             children: [
-                              Icon(Icons.remove),
+                              InkWell(
+                                  onTap: () {
+                                    providerObj.onDecQty(index);
+                                  },
+                                  child: Icon(Icons.remove)),
                               SizedBox(
                                 width: 6,
                               ),
@@ -91,7 +95,11 @@ class _CartScreenState extends State<CartScreen> {
                               SizedBox(
                                 width: 6,
                               ),
-                              Icon(Icons.add)
+                              InkWell(
+                                  onTap: () {
+                                    providerObj.onIncrementQty(index);
+                                  },
+                                  child: Icon(Icons.add)),
                             ],
                           )
                         ],

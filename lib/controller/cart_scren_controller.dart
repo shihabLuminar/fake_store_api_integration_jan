@@ -26,6 +26,21 @@ class CartScreenController with ChangeNotifier {
 
   deleteFromCart(int index) {
     cartList.removeAt(index);
+
     notifyListeners();
+  }
+
+  onIncrementQty(int index) {
+    cartList[index].qty = cartList[index].qty + 1;
+
+    notifyListeners();
+  }
+
+  onDecQty(int index) {
+    if (cartList[index].qty > 1) {
+      cartList[index].qty = cartList[index].qty - 1;
+
+      notifyListeners();
+    }
   }
 }
